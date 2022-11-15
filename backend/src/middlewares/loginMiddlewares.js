@@ -2,7 +2,7 @@ const { User } = require('../db/models');
 
 class LoginMiddlewares {
   // async function bellow
-  _findUserByEmail = (id) => User.findOne({ where: { id } });
+  _findUserByEmail = (email) => User.findOne({ where: { email } });
 
   signUpMiddleware = async ({ body: { email } }, res, next) => {
     const user = await this._findUserByEmail(email);
