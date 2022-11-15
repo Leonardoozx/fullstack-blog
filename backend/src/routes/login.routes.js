@@ -8,10 +8,10 @@ const router = express.Router();
 const loginController = new LoginController();
 const loginMiddlewares = new LoginMiddlewares();
 
-router.post('/', loginMiddlewares.signUpMiddleware, loginController.login);
+router.post('/', loginMiddlewares.loginMiddleware, loginController.login);
 router.post(
   '/signUp',
-  loginMiddlewares.loginMiddleware,
+  loginMiddlewares.signUpMiddleware,
   loginController.signUp
 );
 
