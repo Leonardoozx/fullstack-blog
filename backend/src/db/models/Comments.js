@@ -1,3 +1,5 @@
+const { User } = require('../models');
+
 module.exports = (sequelize, DataTypes) => {
   const Comments = sequelize.define(
     'Comments',
@@ -25,5 +27,11 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'comments',
     }
   );
+
+  Comments.associate = (models) => {
+    Comments.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
+    models.User.hasMany(models.Comments, { as: 'user' });
+  };
+
   return Comments;
 };

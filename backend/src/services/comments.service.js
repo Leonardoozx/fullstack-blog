@@ -1,10 +1,14 @@
-const { Comments } = require('../db/models');
+const { Comments, User } = require('../db/models');
 
 class CommentsServices {
   _formatedDate = new Date().toLocaleString().split(', ').join(' ');
 
   // async function bellow
-  getAllComments = () => Comments.findAll();
+  getAllComments = () =>
+    Comments.findAll({
+      include: { model: User, as: 'user', attributes: ['name', 'email'] },
+      attributes: ['id', 'content', 'date', 'userId'],
+    });
 
   postNewComment = async ({ content, userId }) => {
     const insertedComment = await Comments.create({
