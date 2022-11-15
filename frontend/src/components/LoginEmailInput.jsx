@@ -10,7 +10,7 @@ function LoginEmailInput() {
     setUserDoesNotExist(false)
   }
   return (
-    <>
+    <div className="login-email-container">
       <input
         name="loginEmail"
         value={genericState.loginEmail}
@@ -19,7 +19,7 @@ function LoginEmailInput() {
         placeholder="Please, type your email"
       />
       {verifyEmail(genericState.loginEmail) && <p>Please type a valid email</p>}
-    </>
+    </div>
   );
 }
 

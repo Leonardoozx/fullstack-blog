@@ -1,0 +1,26 @@
+#login-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  form {
+    background-color: $bg-components;
+    height: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    box-shadow: 10px 5px 5px rgb(14, 14, 14);
+
+    @media screen and (min-width:280px) and (max-width:700px) {
+      width: 95%;
+    }
+
+    header {
+      color: $letter-color;
+    }
+  }
+}

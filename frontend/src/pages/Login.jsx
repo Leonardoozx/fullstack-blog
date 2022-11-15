@@ -24,7 +24,8 @@ function Login() {
   };
   return (
     <div id="login-container">
-      <form onSubmit={handleLoginSubmit}>
+      <form className="login-form-container" onSubmit={handleLoginSubmit}>
+        <header>Wellcome!</header>
         <LoginEmailInput />
         <LoginPasswordInput />
         {userDoesNotExist && (

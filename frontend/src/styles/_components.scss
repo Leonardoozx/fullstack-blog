@@ -1,0 +1,45 @@
+.login-form-container {
+  align-items: center;
+  justify-content: center;
+
+  header {
+    align-self: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    p {
+      color: rgb(226, 1, 1);
+      margin-bottom: 20px;
+    }
+
+  }
+  
+  input {
+    width: 65%;
+    height: 5vh;
+    padding: 10px;
+    align-self: center;
+    margin-bottom: 20px;
+    @media screen and (min-width:280px) and (max-width:280px) {
+      width: 90%;      
+    }
+  }
+  
+  a {
+    color: $letter-color;
+  }
+
+  button {
+    width: 60%;
+    height: 5vh;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+}
