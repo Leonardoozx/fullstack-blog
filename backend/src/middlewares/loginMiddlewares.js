@@ -10,7 +10,7 @@ class LoginMiddlewares {
     next();
   };
 
-  loginMiddleware = async ({ body: { email } }, res, next) => {
+  loginMiddleware = async ({ body: { email, password } }, res, next) => {
     const user = await this._findUserByEmail(email);
     if (!user) return res.status(404).json({ message: 'User does not exists' });
     if (password !== user.password)
