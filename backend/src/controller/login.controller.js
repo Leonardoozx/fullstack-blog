@@ -10,7 +10,7 @@ class LoginController {
 
   login = async ({ body }, res) => {
     const message = await this._loginServices.login(body);
-    res.status(200).json({ message });
+    res.status(200).json(message);
   };
 }
 
