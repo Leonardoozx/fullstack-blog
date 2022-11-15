@@ -4,32 +4,26 @@ class CommentsController {
   _commentsServices = new CommentsServices();
 
   getAllComments = async (_req, res) => {
-    const { type, message } = await this._commentsServices.getAllComments();
-    if (type) return res.status(400).json({ message });
-
-    res.status(200).json(message);
+    const allComments = await this._commentsServices.getAllComments();
+    res.status(200).json(allComments);
   };
 
   postNewComment = async ({ body }, res) => {
-    const { type, message } = await this._commentsServices.postNewComment(body);
-    if (type) return res.status(400).json({ message })
-    res.status(200).json(message);
+    const { message } = await this._commentsServices.postNewComment(body);
+    res.status(201).json(message);
   };
 
   deleteCommentById = async ({ params }, res) => {
-    const { type, message } = await this._commentsServices.deleteCommentById(
-      +(params.id)
-    );
-    if (type) return res.status(404).json({ message });
-    res.status(204).send();
+    const message = await this._commentsServices.deleteCommentById(+params.id);
+    res.status(204).json(message);
   };
 
-  updateCommentById = async ({ params }, res) => {
-    const { type, message } = await this._commentsServices.updateCommentById(
-      +(params.id)
+  updateCommentById = async ({ body, params }, res) => {
+    const message = await this._commentsServices.updateCommentById(
+      body,
+      +params.id
     );
-    if (type) return res.status(404).json({ message });
-    res.status(201).json(message);
+    res.status(200).json(message);
   };
 }
 module.exports = CommentsController;
