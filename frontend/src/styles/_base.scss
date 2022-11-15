@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  background-color: $bg-body;
+  color: white;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+input,
+button {
+  border: $border-pattern;
+  border-radius: 10px;
+}
+
+textarea {
+  border: $border-pattern;
+  border-radius: 10px;
+  resize: none;
+}
+
+button {
+  transition: 0.1s;
+  background-color: $bg-first-btn;
+}
+
+button:hover {
+  background-color: $bg-second-btn;
+}
+
+button:active {
+  background-color: $bg-last-btn;
+}
+
+img {
+  width: 30px;
+}
