@@ -1,8 +1,8 @@
 const { Comments, User } = require('../db/models');
 
 class CommentsMiddlewares {
+  // async functions bellow
   _findUserByUserId = (id) => User.findOne({ where: { id } });
-
   _findCommentById = (id) => Comments.findOne({ where: { id } });
 
   postNewCommentMiddleware = async ({ body: { userId } }, res, next) => {
@@ -15,15 +15,8 @@ class CommentsMiddlewares {
   updateAndDeleteCommentMiddleware = async ({ params }, res, next) => {
     // verifies if the comment exists
     const comment = await this._findCommentById(+params.id);
-    const user = await this._findUserByUserId(comment.userId);
     if (!comment) {
       return res.status(400).json({ message: 'This comment does not exists' });
-    }
-    // verifies if the user is trying to update other people comments
-    if (user.id !== comment.userId) {
-      return res
-        .status(404)
-        .json({ message: 'You can only update your own comments' });
     }
     next();
   };
