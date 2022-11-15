@@ -21,6 +21,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
+      isUserLoggedIn: {
+        field: 'is_user_logged_in',
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      }
     });
   },
   async down(queryInterface, _Sequelize) {
