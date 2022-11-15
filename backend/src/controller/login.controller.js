@@ -4,14 +4,12 @@ class LoginController {
   _loginServices = new LoginServices();
 
   signUp = async ({ body }, res) => {
-    const { type, message } = await this._loginServices.signUp(body);
-    if (type) return res.status(400).json({ message });
+    const message = await this._loginServices.signUp(body);
     res.status(201).json(message);
   };
 
   login = async ({ body }, res) => {
-    const { type, message } = await this._loginServices.login(body);
-    if (type) return res.status(400).json({ message });
+    const message = await this._loginServices.login(body);
     res.status(200).json({ message });
   };
 }
