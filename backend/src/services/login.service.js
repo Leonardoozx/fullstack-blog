@@ -8,7 +8,7 @@ class LoginServices {
 
   login = async ({ email, password }) => {
     await User.update({ isUserLoggedIn: true }, { where: { email, password } });
-    return { message: 'Updated with success' }
+    return { message: 'Logged in with success' }
   };
 }
 
