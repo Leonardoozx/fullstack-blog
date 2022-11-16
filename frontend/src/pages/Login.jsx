@@ -16,6 +16,7 @@ function Login() {
     wrongPassword,
     setWrongPassword,
     setLoading,
+    setUsername,
   } = useContext(context);
 
   const navigate = useNavigate();
@@ -24,11 +25,14 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      await loginPostRequest(
+      const { dataValues } = await loginPostRequest(
         genericState.loginEmail,
         genericState.loginPassword
       );
+      setUsername(dataValues.name);
       navigate('/feed');
+      localStorage.setItem('userId', dataValues.id);
+      localStorage.setItem('username', dataValues.name);
     } catch ({ response }) {
       if (response.data.message === 'User does not exists') {
         setUserDoesNotExist(true);
