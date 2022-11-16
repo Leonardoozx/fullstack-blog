@@ -1,27 +1,37 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import LoginEmailInput from '../components/LoginEmailInput';
 import LoginPasswordInput from '../components/LoginPasswordInput';
 import DoesUserExistMessage from '../components/DoesUserExistMessage';
 import context from '../context/context';
 import { signUpPostRequest } from '../service/loginRequests';
 import { useNavigate } from 'react-router-dom';
-import LoginButton from '../components/LoginButton';
+import SignUpButton from '../components/SignUpButton';
 
 function SignUp() {
-  const { genericState, setGenericState, doesUserExist, setDoesUserExist } =
-    useContext(context);
+  const {
+    genericState,
+    setGenericState,
+    doesUserExist,
+    setDoesUserExist,
+    setLoading,
+  } = useContext(context);
 
   const navigate = useNavigate();
 
   const handleSignUpClick = async (e) => {
     e.preventDefault();
-    const isUserLoggedIn = await signUpPostRequest(
-    genericState.loginEmail,
-    genericState.loginPassword
+    setLoading(true);
+    const { message } = await signUpPostRequest(
+      genericState.signUpName,
+      genericState.loginEmail,
+      genericState.loginPassword
     );
-    if (isUserLoggedIn.message === 'User already exists')
-    return setDoesUserExist(true);
-    // navigate('/feed');
+    if (message && message.includes('400')) {
+      setLoading(false);
+      setDoesUserExist(true);
+      return;
+    }
+    navigate('/feed');
   };
   return (
     <div className="login-container">
@@ -41,7 +51,7 @@ function SignUp() {
           path="/"
           message="It seems you're already registered, do you wanna "
         />
-        <LoginButton message="Create account" />
+        <SignUpButton loginPage={false} />
       </form>
     </div>
   );

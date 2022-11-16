@@ -6,6 +6,7 @@ import context from '../context/context';
 import { loginPostRequest } from '../service/loginRequests';
 import DoesUserExistMessage from '../components/DoesUserExistMessage';
 import LoginButton from '../components/LoginButton';
+import SignUpButton from '../components/SignUpButton';
 
 function Login() {
   const {
@@ -14,12 +15,14 @@ function Login() {
     userDoesNotExist,
     wrongPassword,
     setWrongPassword,
+    setLoading,
   } = useContext(context);
 
   const navigate = useNavigate();
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       await loginPostRequest(
         genericState.loginEmail,
@@ -30,15 +33,17 @@ function Login() {
       if (response.data.message === 'User does not exists') {
         setUserDoesNotExist(true);
         setWrongPassword(false);
+        setLoading(false);
         return;
       }
       setWrongPassword(true);
+      setLoading(false);
     }
   };
   return (
     <div className="login-container">
       <form className="login-form-container" onSubmit={handleLoginSubmit}>
-        <header>Wellcome!</header>
+        <header>Welcome!</header>
         <LoginEmailInput />
         <LoginPasswordInput />
         {!wrongPassword ? (
@@ -50,7 +55,8 @@ function Login() {
         ) : (
           <p>Wrong password</p>
         )}
-        <LoginButton message="Login" />
+        <LoginButton />
+        <SignUpButton loginPage={true} />
       </form>
     </div>
   );
