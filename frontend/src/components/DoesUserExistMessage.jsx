@@ -6,7 +6,7 @@ function DoesUserExistMessage({ path, message, doesUserExist }) {
       {doesUserExist && (
         <p>
           {message}
-          <Link to={`/${path}`}>
+          <Link to={`/${path === "signUp" ? 'signUp' : ''}`}>
             {path === 'signUp' ? 'sign up' : 'log in'}
           </Link>
           ?
