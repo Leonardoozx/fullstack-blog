@@ -5,6 +5,7 @@ import LoginPasswordInput from '../components/LoginPasswordInput';
 import context from '../context/context';
 import { loginPostRequest } from '../service/loginRequests';
 import DoesUserExistMessage from '../components/DoesUserExistMessage';
+import LoginButton from '../components/LoginButton';
 
 function Login() {
   const {
@@ -49,7 +50,7 @@ function Login() {
         ) : (
           <p>Wrong password</p>
         )}
-        <button type="submit">Login</button>
+        <LoginButton message="Login" />
       </form>
     </div>
   );
