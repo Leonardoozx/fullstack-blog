@@ -20,7 +20,7 @@
     }
 
   }
-  
+
   input {
     width: 65%;
     height: 5vh;
@@ -28,10 +28,10 @@
     align-self: center;
     margin-bottom: 20px;
     @media screen and (min-width:280px) and (max-width:280px) {
-      width: 90%;      
+      width: 90%;
     }
   }
-  
+
   a {
     color: $letter-color;
   }
@@ -41,5 +41,89 @@
     height: 5vh;
     font-size: 20px;
     margin-top: 20px;
+  }
+}
+
+.form-container {
+  #form-info-container {
+    flex-direction: column;
+
+    div {
+      width: 60%;
+      flex-direction: column;
+      margin-bottom: 10px;
+      @media screen and (min-width:280px) and (max-width:700px) {
+        width: 100%; 
+      }
+    }
+
+    p,
+    textarea {
+      margin-left: 5px;
+      margin-bottom: 5px;
+      color: white;
+      @media screen and (min-width:280px) and (max-width:700px) {
+        margin-left: 0px;
+      }
+    }
+
+    p {
+      align-self: flex-start;
+      margin-left: 11%;
+      font-size: 20px;
+      @media screen and (min-width:280px) and (max-width:700px) {
+        align-self: center;
+        margin-left: 0px;
+      }
+    }
+
+    textarea {
+      height: 80px;
+      width: 95%;
+      resize: none;
+      padding: 5px;
+    }
+
+    button {
+      align-self: flex-end;
+      margin-right: 10%;
+      padding: 0 30px;
+      @media screen and (min-width:280px) and (max-width:700px) {
+        margin-right: 0%;
+        align-self: center;
+      }
+    }
+  }
+}
+
+.comments-info-container {
+  .comments-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 5px;
+    width: 80%;
+    
+
+    .comments-name, .comments-date {
+      font-size: 20px;
+    }
+
+    .comments-date {
+      align-self: flex-end;
+      margin-right: 20px;
+    }
+  }
+
+  .comment-btns-container {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    justify-content: flex-start;
   }
 }

@@ -14,7 +14,6 @@
     flex-direction: column;
     width: 600px;
     box-shadow: 10px 5px 5px rgb(14, 14, 14);
-
     @media screen and (min-width:280px) and (max-width:700px) {
       width: 95%;
     }
@@ -26,12 +25,14 @@
 }
 
 .feed-container {
+  margin-top: 20px;
+
   form {
     display: flex;
     height: 28vh;
     justify-content: center;
     align-items: center;
-    
+
     div {
       display: flex;
       background-color: $bg-components;
@@ -40,6 +41,10 @@
       justify-content: center;
       height: 200px;
       align-items: center;
+
+      @media screen and (max-width:280px) and (max-width:700px) {
+        width: 95%;
+      }
     }
 
   }
@@ -53,12 +58,17 @@
   margin-top: 25px;
 
   .comments-info-container {
-    background-color: grey;
+    background-color: $bg-components;
     margin-top: 20px;
-    height: 150px;
+    height: 180px;
     width: 65%;
     display: flex;
     align-items: center;
     border-radius: 10px;
+
+    @media screen and (max-width:280px) and (max-width:700px) {
+      width: 90%;
+      height: 240px;
+    }
   }
 }
