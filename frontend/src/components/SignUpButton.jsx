@@ -16,7 +16,7 @@ function LoginButton({ loginPage }) {
       }
       type="submit"
     >
-      {loading ? 'Loading...' : 'Create account'}
+      {loading && !loginPage ? 'Loading...' : 'Create account'}
     </button>
   );
 }
