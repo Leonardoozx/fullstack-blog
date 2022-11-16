@@ -27,6 +27,7 @@
     padding: 10px;
     align-self: center;
     margin-bottom: 20px;
+
     @media screen and (min-width:280px) and (max-width:280px) {
       width: 90%;
     }
@@ -52,8 +53,9 @@
       width: 60%;
       flex-direction: column;
       margin-bottom: 10px;
+
       @media screen and (min-width:280px) and (max-width:700px) {
-        width: 100%; 
+        width: 100%;
       }
     }
 
@@ -61,7 +63,7 @@
     textarea {
       margin-left: 5px;
       margin-bottom: 5px;
-      color: white;
+
       @media screen and (min-width:280px) and (max-width:700px) {
         margin-left: 0px;
       }
@@ -71,6 +73,7 @@
       align-self: flex-start;
       margin-left: 11%;
       font-size: 20px;
+
       @media screen and (min-width:280px) and (max-width:700px) {
         align-self: center;
         margin-left: 0px;
@@ -78,16 +81,22 @@
     }
 
     textarea {
-      height: 80px;
-      width: 95%;
+      height: 85px;
+      width: 80%;
       resize: none;
       padding: 5px;
+      color: black;
+
+      @media screen and (min-width:280px) and (max-width:700px) {
+        width: 95;
+      }
     }
 
     button {
       align-self: flex-end;
       margin-right: 10%;
       padding: 0 30px;
+
       @media screen and (min-width:280px) and (max-width:700px) {
         margin-right: 0%;
         align-self: center;
@@ -104,9 +113,10 @@
     height: 100%;
     padding: 5px;
     width: 80%;
-    
 
-    .comments-name, .comments-date {
+
+    .comments-name,
+    .comments-date {
       font-size: 20px;
     }
 

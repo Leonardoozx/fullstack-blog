@@ -1,11 +1,30 @@
 import { useContext } from 'react';
 import context from '../context/context';
+import { postComment, updateCommentById } from '../service/commentsRequests';
 
 function FormCard() {
-  const { genericState, setGenericState, username } = useContext(context);
+  const { genericState, setGenericState, username, setHasNewComments, willEdit, setWillEdit, commentId } =
+    useContext(context);
 
-  const handleSubmitClick = (e) => {
+  const removeValuesFromInput = () => {
+    // the function bellow is the param to setGenericState to reset the blog inputs
+    const defaultTarget = (name) => ({ target: { name, value: '' } });
+    setGenericState(defaultTarget('comment'));
+  };
+
+  const handleSubmitClick = async (e) => {
     e.preventDefault();
+    if (willEdit) {
+      await updateCommentById(commentId, genericState.comment);
+      setWillEdit(false);
+      setHasNewComments((prevValue) => prevValue + 1);
+      removeValuesFromInput();
+      return;
+    }
+    await postComment(genericState.comment, +localStorage.getItem('userId'));
+    setHasNewComments((prevValue) => prevValue + 1);
+    removeValuesFromInput();
+    setWillEdit(false);
   };
 
   return (
@@ -24,7 +43,7 @@ function FormCard() {
             value={genericState.comment}
             maxLength={140}
           />
-          <button type="submit">Share</button>
+          <button type="submit">{!willEdit ? 'Share' : 'Edit'}</button>
         </div>
       </div>
     </form>

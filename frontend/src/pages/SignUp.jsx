@@ -21,7 +21,7 @@ function SignUp() {
   const handleSignUpClick = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const { message } = await signUpPostRequest(
+    const { id, message } = await signUpPostRequest(
       genericState.signUpName,
       genericState.loginEmail,
       genericState.loginPassword
@@ -31,6 +31,8 @@ function SignUp() {
       setDoesUserExist(true);
       return;
     }
+    localStorage.setItem('username', genericState.signUpName);
+    localStorage.setItem('userId', id);
     navigate('/feed');
   };
   return (

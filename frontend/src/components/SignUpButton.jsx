@@ -1,11 +1,14 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import context from '../context/context';
 import verifyEmail from '../utils/verifyEmail';
 
 function LoginButton({ loginPage }) {
   const { genericState, loading } = useContext(context);
+  const navigate = useNavigate();
   return (
     <button
+      onClick={loginPage ? () => navigate('/signUp') : () => {}}
       disabled={
         loginPage
           ? false
