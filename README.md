@@ -4,7 +4,10 @@
 
 In the `frontend directory`, you can run: `npm start` or `yarn start`
 It will runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
+
+Para acessar o feed, primeiro é necessaŕio fazer cadastro na plataforma :)\
+(Obs: email, senha, e nome, não precisam ser reais)
 
 The page will reload when you make changes.
 
