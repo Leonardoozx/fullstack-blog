@@ -7,11 +7,14 @@ function ContextProvider({ children }) {
     comment: '',
     loginEmail: '',
     loginPassword: '',
+    signUpName: '',
   };
 
   const [comments, setComments] = useState([]);
   const [hasNewComment, setHasNewComments] = useState(1);
   const [userDoesNotExist, setUserDoesNotExist] = useState(false);
+  const [doesUserExist, setDoesUserExist] = useState(false);
+  const [wrongPassword, setWrongPassword] = useState(false);
   // const [ willEdit, setWillEdit ] = useState(false);
 
   const [genericState, setGenericState] = useGenericState(INITIAL_STATE);
@@ -23,6 +26,10 @@ function ContextProvider({ children }) {
     setHasNewComments,
     userDoesNotExist,
     setUserDoesNotExist,
+    doesUserExist,
+    setDoesUserExist,
+    wrongPassword,
+    setWrongPassword,
     // willEdit,
     // setWillEdit,
     // userId,

@@ -3,12 +3,18 @@ import context from '../context/context';
 import verifyEmail from '../utils/verifyEmail';
 
 function LoginEmailInput() {
-  const { genericState, setGenericState, setUserDoesNotExist } = useContext(context);
-  
+  const {
+    genericState,
+    setGenericState,
+    setUserDoesNotExist,
+    setDoesUserExist,
+  } = useContext(context);
+
   const handleWithLoginInput = (e) => {
     setGenericState(e);
-    setUserDoesNotExist(false)
-  }
+    setUserDoesNotExist(false);
+    setDoesUserExist(false);
+  };
   return (
     <div className="login-email-container">
       <input
