@@ -24,3 +24,41 @@
     }
   }
 }
+
+.feed-container {
+  form {
+    display: flex;
+    height: 28vh;
+    justify-content: center;
+    align-items: center;
+    
+    div {
+      display: flex;
+      background-color: $bg-components;
+      width: 70%;
+      border-radius: 15px;
+      justify-content: center;
+      height: 200px;
+      align-items: center;
+    }
+
+  }
+}
+
+.comments-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+
+  .comments-info-container {
+    background-color: grey;
+    margin-top: 20px;
+    height: 150px;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+  }
+}
