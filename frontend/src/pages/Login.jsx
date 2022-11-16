@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoginEmailInput from '../components/LoginEmailInput';
 import LoginPasswordInput from '../components/LoginPasswordInput';
@@ -26,8 +26,11 @@ function Login() {
       );
       navigate('/feed');
     } catch ({ response }) {
-      if (response.data.message === 'User does not exist')
-        return setUserDoesNotExist(true);
+      if (response.data.message === 'User does not exists') {
+        setUserDoesNotExist(true);
+        setWrongPassword(false);
+        return;
+      }
       setWrongPassword(true);
     }
   };

@@ -2,12 +2,10 @@ import { useContext } from 'react';
 import context from '../context/context';
 
 function LoginPasswordInput() {
-  const { genericState, setGenericState, setWrongPassword } =
-    useContext(context);
+  const { genericState, setGenericState } = useContext(context);
 
   const onPasswordChange = (e) => {
     setGenericState(e);
-    setWrongPassword(false);
   };
   return (
     <input
