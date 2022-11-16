@@ -15,25 +15,13 @@ function SignUp() {
 
   const handleSignUpClick = async (e) => {
     e.preventDefault();
-    // const isUserLoggedIn = await signUpPostRequest(
-    // genericState.loginEmail,
-    // genericState.loginPassword
-    // );
-    await fetch('https://fullstack-blog-backend.up.railway.app/login/signUp/', {
-      method: 'POST',
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      },
-      body: {
-        email: genericState.loginEmail,
-        password: genericState.loginPassword,
-        name: 'Leonardo',
-      },
-    }).then((x) => console.log(x.json()));
-
-    // if (isUserLoggedIn.message === 'User already exists')
-    // return setDoesUserExist(true);
-    // navigate('/feed');
+    const isUserLoggedIn = await signUpPostRequest(
+    genericState.loginEmail,
+    genericState.loginPassword
+    );
+    if (isUserLoggedIn.message === 'User already exists')
+    return setDoesUserExist(true);
+    navigate('/feed');
   };
   return (
     <div className="login-container">
