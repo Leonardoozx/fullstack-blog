@@ -15,6 +15,6 @@ app.use(express.json());
 
 app.use('/login', loginRoutes);
 app.use('/comments', commentsRoutes);
-app.use('/user', userRoutes)
+app.use('/user', userRoutes);
 
 module.exports = app;
