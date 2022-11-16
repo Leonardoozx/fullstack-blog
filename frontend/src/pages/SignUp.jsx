@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import LoginEmailInput from '../components/LoginEmailInput';
 import LoginPasswordInput from '../components/LoginPasswordInput';
 import DoesUserExistMessage from '../components/DoesUserExistMessage';
