@@ -21,7 +21,7 @@ function SignUp() {
     );
     if (isUserLoggedIn.message === 'User already exists')
     return setDoesUserExist(true);
-    navigate('/feed');
+    // navigate('/feed');
   };
   return (
     <div className="login-container">
