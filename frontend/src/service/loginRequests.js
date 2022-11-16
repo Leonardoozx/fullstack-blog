@@ -1,16 +1,28 @@
 import axios from 'axios';
+// import https from 'https';
+
+// const agent = new https.Agent({
+  // rejectUnauthorized: false,
+// });
+// axios.get('https://something.com/foo', {
+  // 'resolve.fallback': { https: require.resolve('https-browserify') },
+// });
 
 const api = axios.create({
-  baseURL: 'https://fullstack-blog-backend.up.railway.app',
+  baseURL: 'http://fullstack-blog-backend.up.railway.app',
+  // baseURL: 'https://localhost:3001',
 });
 
 export const loginPostRequest = async (email, password) => {
-  try {
-    const { data } = await api.post('/login', { email, password });
-    return data;
+  const { data } = await api.post('/login', { email, password });
+  return data;
+};
 
-  } catch (_error) {
-    return { message: 'User does not exists' }
+export const signUpPostRequest = async (name, email, password) => {
+  try {
+    const { data } = await api.post('/login/signUp', { name, email, password });
+    return data;
+  } catch (error) {
+    return { message: error.message };
   }
-  
 };
