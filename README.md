@@ -1,6 +1,6 @@
 ### This is a fullstack project, the database, backend, and frontend are all hosted in Railway
 
-`Deploy link:` [fullstack-blog-frontend.up.railway.app ](fullstack-blog-frontend.up.railway.app)
+`Deploy link:` [https://fullstack-blog-frontend.up.railway.app ](https://fullstack-blog-frontend.up.railway.app)
 
 In the `frontend directory`, after running `npm install`, you can run: `npm start` or `yarn start`
 It will runs the app in the development mode.\
