@@ -41,7 +41,7 @@ function FormCard() {
             placeholder="Share something cool that happenned in your day... :)"
             onChange={setGenericState}
             value={genericState.comment}
-            maxLength={140}
+            maxLength={220}
           />
           <button type="submit">{!willEdit ? 'Share' : 'Edit'}</button>
         </div>
