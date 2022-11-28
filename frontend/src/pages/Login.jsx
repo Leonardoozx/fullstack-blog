@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import LoginEmailInput from '../components/LoginEmailInput';
 import LoginPasswordInput from '../components/LoginPasswordInput';
 import context from '../context/context';
-import { loginPostRequest } from '../service/loginRequests';
+import { loginPostRequest } from '../services/loginRequests';
 import DoesUserExistMessage from '../components/DoesUserExistMessage';
 import LoginButton from '../components/LoginButton';
 import SignUpButton from '../components/SignUpButton';

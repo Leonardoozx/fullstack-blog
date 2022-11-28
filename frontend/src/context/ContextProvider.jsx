@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import useGenericState from '../hooks/useGenericState';
-import { getAllComments } from '../service/commentsRequests';
+import { getAllComments } from '../services/commentsRequests';
 import Context from './context';
 
 function ContextProvider({ children }) {

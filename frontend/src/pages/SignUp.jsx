@@ -3,7 +3,7 @@ import LoginEmailInput from '../components/LoginEmailInput';
 import LoginPasswordInput from '../components/LoginPasswordInput';
 import DoesUserExistMessage from '../components/DoesUserExistMessage';
 import context from '../context/context';
-import { signUpPostRequest } from '../service/loginRequests';
+import { signUpPostRequest } from '../services/loginRequests';
 import { useNavigate } from 'react-router-dom';
 import SignUpButton from '../components/SignUpButton';
 

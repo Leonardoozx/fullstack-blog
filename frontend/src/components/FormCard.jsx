@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import context from '../context/context';
-import { postComment, updateCommentById } from '../service/commentsRequests';
+import { postComment, updateCommentById } from '../services/commentsRequests';
 
 function FormCard() {
   const { genericState, setGenericState, username, setHasNewComments, willEdit, setWillEdit, commentId } =

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import context from '../context/context';
-import { deleteCommentById } from '../service/commentsRequests';
+import { deleteCommentById } from '../services/commentsRequests';
 
 function CommentsCard(comment) {
   const { setHasNewComments, setWillEdit, setGenericState, setCommentId } =
