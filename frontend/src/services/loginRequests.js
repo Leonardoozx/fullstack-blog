@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://fullstack-blog-backend.up.railway.app',
+  baseURL: 'http://localhost:3001',
 });
 
 export const loginPostRequest = async (email, password) => {
