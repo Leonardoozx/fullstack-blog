@@ -2,7 +2,7 @@
 
 In the `root directory`, you can run: `docker-compose up -d`
 It will runs the app in a docker container.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
+Wait at least 10 seconds for the connection between the backend and the database, and then you are able to open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 Before posting your comments or trying to log in the Blog page, you must create an account (your email, nickname, and password, doesn't need to be real)
 
